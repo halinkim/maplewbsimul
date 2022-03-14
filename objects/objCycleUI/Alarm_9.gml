@@ -153,7 +153,7 @@ StatsStrDope = objSpecUI.Dope[1] * 30
 // 공격력
 AttBase = objSpecUI.SpecAtt
 AttNonPer = objSpecUI.SpecMonsterLifeAtt * floor(Lv / 20)
-AttDope = objSpecUI.DurationBuff[5] * 2 + 20 * objSpecUI.DurationBuff[7] + 30 * (objSpecUI.Dope[2] + objSpecUI.Dope[3] + objSpecUI.Dope[4] + objSpecUI.Dope[5] + objSpecUI.Dope[8] + objSpecUI.Dope[10]) + objSpecUI.Dope[6] * 15 + objSpecUI.Dope[7] + objSpecUI.Dope[19] * 50
+AttDope = objSpecUI.DurationBuff[5] * 2 + 20 * objSpecUI.DurationBuff[7] + 30 * (objSpecUI.Dope[2] + objSpecUI.Dope[3] + objSpecUI.Dope[4] + objSpecUI.Dope[5] + objSpecUI.Dope[8] + objSpecUI.Dope[10]) + objSpecUI.Dope[6] * 30 + objSpecUI.Dope[7] + objSpecUI.Dope[19] * 50
 
 // 공격력%
 PerAttBase = objSpecUI.SpecPerAtt
@@ -214,7 +214,7 @@ dAddCriExp = 0
 dAddCriDmg = 0
 dAddAIgnore = 1
 dAddFDmg = 1
-AttObject = 4 + objSpecUI.SpecMonsterLifeMultiple + objSpecUI.SpecAbilityMultiple
+AttObject = 4 + objSpecUI.SpecAbilityMultiple
 baseDmg = 345 + 3 * objSpecUI.DurationBuff[5]
 baseDmg *= (100 + objSpecUI.CoreSkill[0] * 2) / 100
 
@@ -226,7 +226,7 @@ if (objSpecUI.CoreSkill[0] >= 40) {
 	// 방무 +20%
 	dAddAIgnore *= (100 - 20) / 100
 }
-dAddDmg += power(1.2, AttObject - 1)
+dAddDmg += 20 * power(1.2, AttObject - 1)
 // 하이퍼 스킬 
 dAddDmg += 20 * objSpecUI.HyperSkill[3] + 30 * objSpecUI.HyperSkill[5]
 dAddAIgnore *= (100 - 20 * objSpecUI.HyperSkill[4]) / 100
@@ -1665,7 +1665,10 @@ if (objSpecUI.DurationBuff[2]) {
 			var interval = 330;
 		}
 		else {
+			//var interval = 540;
 			var interval = 600;
+			
+			
 		}
 	
 		for (var t=0; t * interval < kST * 1000;t++) {

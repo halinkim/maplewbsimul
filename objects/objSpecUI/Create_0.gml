@@ -6,18 +6,18 @@ y0 = 0
 yset = 840
 DealDraw = 0
 
-SpecPureDex = 3851
+SpecPureDex = 3717
 SpecFixDex = 13620
-SpecPureStr = 2173
+SpecPureStr = 2389
 SpecFixStr = 480
 SpecLv = 256
 SpecPerDex = 501
-SpecPerStr = 196
-SpecAtt = 2611
+SpecPerStr = 177
+SpecAtt = 2603
 SpecPerAtt = 93
-SpecDamage = 98
-SpecBossDamage = 396
-SpecArmorIgnore = 93.64
+SpecDamage = 101
+SpecBossDamage = 392
+SpecArmorIgnore = 93.27
 SpecFinalDamage = 48.5
 SpecCriDamage = 92
 SpecCriExp = 100
@@ -35,15 +35,15 @@ CoreSkill[0] = 60 //천노
 CoreSkill[1] = 60 //트라이플링 윔
 CoreSkill[2] = 60 //스톰 브링어
 CoreSkill[3] = 30 //하울링 게일 
-CoreSkill[4] = 28 //볼텍스 스피어 
+CoreSkill[4] = 30 //볼텍스 스피어 
 CoreSkill[5] = 25 //스파이더 인 미러 
 CoreSkill[6] = 0 //크레스트 오브 더 솔라 
 CoreSkill[7] = 20 //초월자 시그너스의 축복 
-CoreSkill[8] = 27 //크리티컬 리인포스 
-CoreSkill[9] = 26 //가이디드 애로우 
+CoreSkill[8] = 30 //크리티컬 리인포스 
+CoreSkill[9] = 30 //가이디드 애로우 
 CoreSkill[10] = 30 //시그너스 팔랑크스 
-CoreSkill[11] = 28 //아이들 윔 
-CoreSkill[12] = 14 //윈드 월 
+CoreSkill[11] = 30 //아이들 윔 
+CoreSkill[12] = 30 //윈드 월 
 
 SeedRestraint = 3
 SeedWeapon = 4
@@ -57,41 +57,41 @@ SCoreNum = 0
 
 ServerLag = 0
 
-DurationBuff[0] = 1 //에메랄드 플라워
-DurationBuff[1] = 1 //핀포인트 피어스 
-DurationBuff[2] = 2 //가이디드 애로우 
+DurationBuff[0] = 0 //에메랄드 플라워
+DurationBuff[1] = 0 //핀포인트 피어스 
+DurationBuff[2] = 1 //가이디드 애로우 
 DurationBuff[3] = 1 //트라이플링 윔 
 DurationBuff[4] = 1 //스톰 브링어 
 DurationBuff[5] = 1 //쓸만한 컴뱃 오더스 
 DurationBuff[6] = 1 //시그너스 나이츠 
 DurationBuff[7] = 1 //쓸만한 어드밴스드 블레스
 
-Dope[0] = 1 // 10단계 민첩
-Dope[1] = 1 // 10단계 힘 
-Dope[2] = 1 // 익스 레드 
-Dope[3] = 1 // 유니온의 힘 
-Dope[4] = 1 // 길축 
-Dope[5] = 1 // 우뿌 
-Dope[6] = 1 // 붕뿌 
-Dope[7] = 20 // 소울웨폰 공격력
+Dope[0] = 0 // 10단계 민첩
+Dope[1] = 0 // 10단계 힘 
+Dope[2] = 0 // 익스 레드 
+Dope[3] = 0 // 유니온의 힘 
+Dope[4] = 0 // 길축 
+Dope[5] = 0 // 우뿌 
+Dope[6] = 0 // 붕뿌 
+Dope[7] = 0 // 소울웨폰 공격력
 Dope[8] = 0 // 전영비 
 Dope[9] = 0 // 고대비
-Dope[10] = 1 // MVP 슈퍼파워 
-Dope[11] = 1 // 고보킬/반빨별
-Dope[12] = 1 // 고관비/반파별
-Dope[13] = 1 // 영메 
+Dope[10] = 0 // MVP 슈퍼파워 
+Dope[11] = 0 // 고보킬/반빨별
+Dope[12] = 0 // 고관비/반파별
+Dope[13] = 0 // 영메 
 Dope[14] = 0 // 명장 크뎀
-Dope[15] = 15 // 길드스킬 크뎀 
-Dope[16] = 15 // 길드스킬 보뎀 
-Dope[17] = 15 // 길드스킬 데미지
-Dope[18] = 15 // 길드스킬 방무
-Dope[19] = 1 // 275 의자 버프
+Dope[15] = 0 // 길드스킬 크뎀 
+Dope[16] = 0 // 길드스킬 보뎀 
+Dope[17] = 0 // 길드스킬 데미지
+Dope[18] = 0 // 길드스킬 방무
+Dope[19] = 0 // 275 의자 버프
 
-Link[0] = 6 // 모법 
-Link[1] = 6 // 모도
-Link[2] = 2 // 카데나
-Link[3] = 2 // 아크
-Link[4] = 2 // 카인
+Link[0] = 0 // 모법 
+Link[1] = 0 // 모도
+Link[2] = 0 // 카데나
+Link[3] = 0 // 아크
+Link[4] = 0 // 카인
 
 
 UnionWildHunter = 4
@@ -112,7 +112,16 @@ BossHalf = 1
 BossArmor = 300
 
 
+CalculDexOn = 44926
+CalculDexoff = 43760
+CalculFixDex = 13620
+CalculLv = 256
 
+CalculAttDexOn = 44926
+CalculAttStrOn = 6912
+CalculFinalAtt = 40185624
+CalculDmg = 101
+CalculPerAtt = 93
 
 
 

@@ -23,9 +23,9 @@ isSkillCoolReduce = [0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0]
 SkillPos[0] = []
 SkillDuration[0] = []
 
-SkillPos[1] = [0, 20]
-SkillDuration[1] = [10, 10]
-SkillKind[1] = [2, 1]
+SkillPos[1] = []
+SkillDuration[1] = []
+SkillKind[1] = []
 
 SkillPos[2] = []
 SkillDuration[2] = []
@@ -115,7 +115,7 @@ SkillAttack[18] = 1
 
 
 SkillPos[19] = [0]
-SkillDuration[19] = [120]
+SkillDuration[19] = [12]
 
 SkillPosMoving = 0
 SkillPosMovingI = 0
@@ -124,8 +124,8 @@ SkillDurationMoving = 0
 SkillDurationMovingI = 0
 SkillDurationMovingJ = 0
 
-array_push(SkillPos[0], 10, 60)
-array_push(SkillDuration[0], 30, 50)
+array_push(SkillPos[0], 0)
+array_push(SkillDuration[0], 12)
 
 
 

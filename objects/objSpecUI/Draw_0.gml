@@ -195,8 +195,8 @@ BaseSpec("통찰력", SpecInsight)
 EditValueOnOff("SpecAbilityMultiple", 0, 2)
 BaseSpec("어빌리티 다수기", ExistLabel[SpecAbilityMultiple])
 
-EditValueOnOff("SpecMonsterLifeMultiple", 0, 2)
-BaseSpec("몬라 다수기", ExistLabel[SpecMonsterLifeMultiple])
+//EditValueOnOff("SpecMonsterLifeMultiple", 0, 2)
+//BaseSpec("몬라 다수기", ExistLabel[SpecMonsterLifeMultiple])
 
 EditValueOnOff("SpecMonsterLifeAtt", 0, 2)
 BaseSpec("몬라 이퀄 루미", ExistLabel[SpecMonsterLifeAtt])
@@ -253,6 +253,45 @@ CoreSpec("가이디드 애로우", CoreSkill[9])
 
 EditValueCore("시그너스 팔랑크스 코어 강화 레벨을 입력해주세요.", 30, 0, 30, 10)
 CoreSpec("시그너스 팔랑크스", CoreSkill[10])
+
+
+
+i++;
+draw_set_halign(fa_left)
+draw_set_valign(fa_middle)
+draw_set_color(c_gray0)
+draw_set_font(fnt16)
+draw_text(x0 + ClickXpos, y0 + 48 + 31 * i + 15, "하이퍼 스킬")
+draw_set_font(fnt12)
+draw_line_width(x0 + ClickXpos, y0 + 48 + 31 * (i + 1), x0 + ClickXpos + 220, y0 + 48 + 31 * (i + 1), 3)
+i++;
+function HyperSpec(name, value) {
+	draw_set_halign(fa_left)
+	draw_text(x0 + ClickXpos, y0 + 48 + 16 + 31 * i, name)
+	draw_set_halign(fa_right)
+	draw_text(x0 + ClickXpos + 220, y0 + 48 + 16 + 31 * i, string(value))
+	draw_line(x0 + ClickXpos, y0 + 48 + 31 * (i + 1), x0 + ClickXpos + 220, y0 + 48 + 31 * (i + 1))
+	i++;
+}
+
+EditValueHyper(0, 0, 2)
+HyperSpec("윔 리인포스", HyperSkill[0])
+
+EditValueHyper(1, 0, 2)
+HyperSpec("윔 인핸스", HyperSkill[1])
+
+EditValueHyper(2, 0, 2)
+HyperSpec("윔 더블 찬스", HyperSkill[2])
+
+EditValueHyper(3, 0, 2)
+HyperSpec("천노 리인포스", HyperSkill[3])
+
+EditValueHyper(4, 0, 2)
+HyperSpec("천노 이그노어 가드", HyperSkill[4])
+
+EditValueHyper(5, 0, 2)
+HyperSpec("천노 보스 킬러", HyperSkill[5])
+
 
 
 
@@ -367,6 +406,42 @@ BuffSpec("쓸어블", UseLabel[DurationBuff[7]])
 
 
 
+
+
+
+
+i++;
+draw_set_halign(fa_left)
+draw_set_valign(fa_middle)
+draw_set_color(c_gray0)
+draw_set_font(fnt16)
+draw_text(x0 + ClickXpos, y0 + 48 + 31 * i + 15, "유니온")
+draw_set_font(fnt12)
+draw_line_width(x0 + ClickXpos, y0 + 48 + 31 * (i + 1), x0 + ClickXpos + 220, y0 + 48 + 31 * (i + 1), 3)
+i++;
+function UnionSpec(name, value) {
+	draw_set_halign(fa_left)
+	draw_text(x0 + ClickXpos, y0 + 48 + 16 + 31 * i, name)
+	draw_set_halign(fa_right)
+	draw_text(x0 + ClickXpos + 220, y0 + 48 + 16 + 31 * i, string(value))
+	draw_line(x0 + ClickXpos, y0 + 48 + 31 * (i + 1), x0 + ClickXpos + 220, y0 + 48 + 31 * (i + 1))
+	i++;
+}
+
+UnionLabel = ["없음", "B", "A", "S", "SS", "SSS"]
+EditValueOnOff("UnionWildHunter", 0, 6)
+UnionSpec("와일드헌터", UnionLabel[UnionWildHunter])
+
+EditValueOnOff("UnionMercedes", 1, 6)
+UnionSpec("메르세데스", UnionLabel[UnionMercedes - 1])
+
+
+
+
+
+
+
+
 draw_line_width(x0 + 820, y0 + 32 + 16, x0 + 820 + 220, y0 + 32 + 16, 3)
 i = 0;
 function DopeSpec(name, value) {
@@ -467,67 +542,45 @@ EditValueLink(4, 0, 3)
 LinkSpec("카인", Link[4])
 
 
-i++;
-draw_set_halign(fa_left)
-draw_set_valign(fa_middle)
-draw_set_color(c_gray0)
-draw_set_font(fnt16)
-draw_text(x0 + 1080, y0 + 48 + 31 * i + 15, "유니온")
-draw_set_font(fnt12)
-draw_line_width(x0 + 1080, y0 + 48 + 31 * (i + 1), x0 + 1080 + 220, y0 + 48 + 31 * (i + 1), 3)
-i++;
-function UnionSpec(name, value) {
-	draw_set_halign(fa_left)
-	draw_text(x0 + 1080, y0 + 48 + 16 + 31 * i, name)
-	draw_set_halign(fa_right)
-	draw_text(x0 + 1080 + 220, y0 + 48 + 16 + 31 * i, string(value))
-	draw_line(x0 + 1080, y0 + 48 + 31 * (i + 1), x0 + 1080 + 220, y0 + 48 + 31 * (i + 1))
-	i++;
-}
-
-UnionLabel = ["없음", "B", "A", "S", "SS", "SSS"]
-EditValueOnOff("UnionWildHunter", 0, 6)
-UnionSpec("와일드헌터", UnionLabel[UnionWildHunter])
-
-EditValueOnOff("UnionMercedes", 1, 6)
-UnionSpec("메르세데스", UnionLabel[UnionMercedes - 1])
-
 
 i++;
 draw_set_halign(fa_left)
 draw_set_valign(fa_middle)
 draw_set_color(c_gray0)
 draw_set_font(fnt16)
-draw_text(x0 + 1080, y0 + 48 + 31 * i + 15, "하이퍼 스킬")
+draw_text(x0 + ClickXpos, y0 + 48 + 31 * i + 15, "공격력 계산기")
 draw_set_font(fnt12)
-draw_line_width(x0 + 1080, y0 + 48 + 31 * (i + 1), x0 + 1080 + 220, y0 + 48 + 31 * (i + 1), 3)
+draw_line_width(x0 + ClickXpos, y0 + 48 + 31 * (i + 1), x0 + ClickXpos + 220, y0 + 48 + 31 * (i + 1), 3)
 i++;
-function HyperSpec(name, value) {
+function CalculAtt(name, value) {
 	draw_set_halign(fa_left)
-	draw_text(x0 + 1080, y0 + 48 + 16 + 31 * i, name)
+	draw_text(x0 + ClickXpos, y0 + 48 + 16 + 31 * i, name)
 	draw_set_halign(fa_right)
-	draw_text(x0 + 1080 + 220, y0 + 48 + 16 + 31 * i, string(value))
-	draw_line(x0 + 1080, y0 + 48 + 31 * (i + 1), x0 + 1080 + 220, y0 + 48 + 31 * (i + 1))
+	draw_text(x0 + ClickXpos + 220, y0 + 48 + 16 + 31 * i, string(value))
+	draw_line(x0 + ClickXpos, y0 + 48 + 31 * (i + 1), x0 + ClickXpos + 220, y0 + 48 + 31 * (i + 1))
 	i++;
 }
 
-EditValueHyper(0, 0, 2)
-HyperSpec("윔 리인포스", HyperSkill[0])
 
-EditValueHyper(1, 0, 2)
-HyperSpec("윔 인핸스", HyperSkill[1])
 
-EditValueHyper(2, 0, 2)
-HyperSpec("윔 더블 찬스", HyperSkill[2])
+EditValue("메용 사용 후 DEX를 입력해주세요. (쓸컴뱃 X, 도핑 X)", 40000, 1, 99999, "CalculAttDexOn")
+CalculAtt("메용 후 DEX", CalculAttDexOn)
+EditValue("STR를 입력해주세요.", 7000, 1, 99999, "CalculAttStrOn")
+CalculAtt("STR", CalculAttStrOn)
+EditValue("뒷스공을 입력해주세요. (컴뱃X, 메용 사용)", 40000000, 1, 999999999, "CalculFinalAtt")
+CalculAtt("스공", CalculFinalAtt)
+EditValue("상세 스탯창의 데미지를 입력해주세요.", 90, 0, 999, "CalculDmg")
+CalculAtt("데미지", CalculDmg)
+EditValue("무보엠류 공격력% 합을 입력해주세요.", 90, 0, 999, "CalculPerAtt")
+CalculAtt("공격력%", CalculPerAtt)
 
-EditValueHyper(3, 0, 2)
-HyperSpec("천노 리인포스", HyperSkill[3])
+CalculFAtt = ceil(CalculFinalAtt / ((CalculAttDexOn * 4 + CalculAttStrOn) / 100 * 1.3 * (120 + CalculPerAtt) / 100 * (100 + CalculDmg) / 100 * (100 + 48.5) / 100))
+CalculAtt("공격력", CalculFAtt)
 
-EditValueHyper(4, 0, 2)
-HyperSpec("천노 이그노어 가드", HyperSkill[4])
 
-EditValueHyper(5, 0, 2)
-HyperSpec("천노 보스 킬러", HyperSkill[5])
+
+
+
 
 
 
@@ -561,6 +614,97 @@ BossSpec("속성 반감", ExistLabel[BossHalf])
 
 EditValue("보스 방어율을 입력해주세요.", 300, 0, 500, "BossArmor")
 BossSpec("보스 방어율", BossArmor)
+
+
+
+i++;
+draw_set_halign(fa_left)
+draw_set_valign(fa_middle)
+draw_set_color(c_gray0)
+draw_set_font(fnt16)
+draw_text(x0 + 1340, y0 + 48 + 31 * i + 15, "최종 스펙")
+draw_set_font(fnt12)
+draw_line_width(x0 + 1340, y0 + 48 + 31 * (i + 1), x0 + 1340 + 220, y0 + 48 + 31 * (i + 1), 3)
+i++;
+function FinalSpec(name, value) {
+	draw_set_halign(fa_left)
+	draw_text(x0 + 1340, y0 + 48 + 16 + 31 * i, name)
+	draw_set_halign(fa_right)
+	draw_text(x0 + 1340 + 220, y0 + 48 + 16 + 31 * i, string(value))
+	draw_line(x0 + 1340, y0 + 48 + 31 * (i + 1), x0 + 1340 + 220, y0 + 48 + 31 * (i + 1))
+	i++;
+}
+
+DrawFDex = floor((floor( (5 * SpecLv + 18) * (115 + DurationBuff[5]) / 100 +  SpecPureDex + Dope[0] * 30) * (100 + SpecPerDex) / 100) + SpecFixDex)
+DrawFStr = floor((floor( SpecPureStr + Dope[1] * 30) * (100 + SpecPerStr) / 100) + SpecFixStr)
+
+DrawFAtt = SpecAtt + DurationBuff[7] * 20 + DurationBuff[5] * 2 + 30 * (Dope[2] + Dope[3] + Dope[4] + Dope[5] + Dope[6] + Dope[8] + Dope[10]) + Dope[7] + Dope[19] * 50
+DrawFPerAtt = SpecPerAtt + DurationBuff[5] + 20 + Dope[13] * 4
+DrawFNonPerAtt = SpecMonsterLifeAtt * floor(SpecLv / 20)
+
+DrawFWeaponConst = 1.3
+DrawFDmg = SpecDamage + Dope[9] * 10 + Dope[17] * 2
+DrawFFDmg = SpecFinalDamage + 1.1 * DurationBuff[5]
+
+DrawFStatAtt = floor((DrawFDex * 4 + DrawFStr) / 100 * (DrawFAtt * (100 + DrawFPerAtt) / 100 + DrawFNonPerAtt) * DrawFWeaponConst * (100 + DrawFDmg) / 100 * (100 + DrawFFDmg) / 100)
+
+
+//EditValueOnOff("SCoreNum", 0, 3)
+FinalSpec("스공", string(drawUnit(DrawFStatAtt)))
+FinalSpec("DEX", string(DrawFDex))
+FinalSpec("STR", string(DrawFStr))
+FinalSpec("공격력", string(DrawFAtt))
+FinalSpec("공격력%", string(DrawFPerAtt))
+FinalSpec("데미지", string(DrawFDmg))
+FinalSpec("최종데미지", string(DrawFFDmg))
+
+
+
+
+
+
+
+i++;
+draw_set_halign(fa_left)
+draw_set_valign(fa_middle)
+draw_set_color(c_gray0)
+draw_set_font(fnt16)
+draw_text(x0 + ClickXpos, y0 + 48 + 31 * i + 15, "순 DEX 계산기")
+draw_set_font(fnt12)
+draw_line_width(x0 + ClickXpos, y0 + 48 + 31 * (i + 1), x0 + ClickXpos + 220, y0 + 48 + 31 * (i + 1), 3)
+i++;
+function CalculSpec(name, value) {
+	draw_set_halign(fa_left)
+	draw_text(x0 + ClickXpos, y0 + 48 + 16 + 31 * i, name)
+	draw_set_halign(fa_right)
+	draw_text(x0 + ClickXpos + 220, y0 + 48 + 16 + 31 * i, string(value))
+	draw_line(x0 + ClickXpos, y0 + 48 + 31 * (i + 1), x0 + ClickXpos + 220, y0 + 48 + 31 * (i + 1))
+	i++;
+}
+
+EditValue("캐릭터 레벨을 입력해주세요.", 275, 200, 300, "CalculDexOff")
+CalculSpec("레벨", CalculLv)
+EditValue("메용 사용 후 DEX를 입력해주세요. (컴뱃 오프, 노도핑)", 90, 1, 99999, "CalculDexOn")
+CalculSpec("메용O DEX", CalculDexOn)
+EditValue("메용 사용 해제 후 DEX를 입력해주세요.", 90, 1, 99999, "CalculDexoff")
+CalculSpec("메용X DEX", CalculDexoff)
+EditValue("고정 DEX를 입력해주세요. (심볼, 하이퍼, 어빌, 유니온 공격대원)", 13200, 0, 99999, "CalculFixDex")
+CalculSpec("고정 DEX", CalculFixDex)
+
+CalculPureDex = CalculDexoff - CalculFixDex
+CalculLvAp = 5 * CalculLv + 18
+CalculRealIncrease = CalculDexOn - CalculDexoff
+CalculPureIncrease = floor(CalculLvAp * 0.15)
+
+CalculPerDex = round((CalculRealIncrease / CalculPureIncrease - 1) * 100) / 100
+//CalculRealPureDex = ceil(CalculPureDex / (1 + CalculPerDex))
+
+CalculSpec("순수 DEX", ceil(CalculPureDex / (1 + CalculPerDex) - CalculLvAp) )
+CalculSpec("DEX%", CalculPerDex * 100)
+
+
+
+
 
 
 draw_set_font(fnt12)

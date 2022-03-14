@@ -1037,7 +1037,7 @@ dAddCriExp = 0
 dAddCriDmg = 0
 dAddAIgnore = 1
 dAddFDmg = 1
-baseDmg = 550 + 22 * objSpecUI.CoreSkill[12] * 0.5
+baseDmg = (550 + 22 * objSpecUI.CoreSkill[12]) * 0.5
 
 for (var k=0; k<j; k++) {
 	var kSP = SkillPos[i][k];

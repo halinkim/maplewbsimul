@@ -739,7 +739,7 @@ CalculStr("도핑 후 STR", PostSTR)
 
 PushTip("고정 STR. 유니온 공격대원 효과(점령X, 유니온 UI 우측 하단에서 확인할 수 있다.), 어빌리티, 하이퍼 스탯에서의 값을 모두 합하여 계산한다.")
 EditValue("고정 STR을 입력해주세요.", 480, 1, 99999, "FixedSTR")
-CalculStr("고정 STR", PostSTR)
+CalculStr("고정 STR", FixedSTR)
 DeltaSTR = PostSTR - PreSTR
 EstPerSTR = round(DeltaSTR / 30 * 100) - 100
 

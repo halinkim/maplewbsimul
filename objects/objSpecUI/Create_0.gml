@@ -123,6 +123,9 @@ CalculFinalAtt = 40185624
 CalculDmg = 101
 CalculPerAtt = 93
 
+PreSTR = 6954
+PostSTR = 7034
+FixedSTR = 480
 
 
 SkillCoolBase[2] = 30

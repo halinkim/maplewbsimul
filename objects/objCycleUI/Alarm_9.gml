@@ -841,7 +841,7 @@ for (var k=0; k<j; k++) {
 	var kST = SkillDelay[i] * SkillAttack[i] / 1000;
 	
 	var interval = SkillDelay[i]
-	IdleFDmg = 1
+	
 	for (var t=0; t * interval < kST * 1000;t++) {
 		search = kSP + t * interval / 1000
 		iAddDex = 0
@@ -851,7 +851,12 @@ for (var k=0; k<j; k++) {
 		iAddCriDmg = 0
 		iAddAIgnore = 1
 		iAddFDmg = 1
-		
+		if (t == 0) {
+			IdleFDmg = 1
+		}
+		else {
+			IdleFDmg = 0.85
+		}
 		// 글로리 오브 가디언즈 
 		for (var s=0; s<array_length(SkillPos[9]); s++) {
 			if (SkillPos[9][s] <= search and search <= SkillPos[9][s] + SkillDelay[9] / 1000) {
@@ -966,7 +971,7 @@ for (var k=0; k<j; k++) {
 		
 		
 		SkillDeal[i] += 3 * NewDeal(dAddDex + iAddDex, dAddDmg + iAddDmg, dAddPerAtt + iAddPerAtt, dAddCriExp + iAddCriExp, dAddCriDmg + iAddCriDmg, dAddAIgnore * iAddAIgnore, dAddFDmg * iAddFDmg * IdleFDmg * baseDmg / 100)
-		IdleFDmg *= 0.85
+		
 		
 		//// 윔 
 		//if (objSpecUI.DurationBuff[3]) {
@@ -1020,6 +1025,7 @@ for (var k=0; k<j; k++) {
 		//}
 		
 	}
+	
 }
 
 

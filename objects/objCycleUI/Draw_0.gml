@@ -26,6 +26,15 @@ for (var i=0; i<=10; i++) {
 	draw_line_width(x0 + 300 + i * 120, y0 + 32, x0 + 300 + i * 120, y0 + 36 + 36, 3)
 }
 
+function PushTip2(text, ii) {
+	if (point_in_rectangle(mouse_x, mouse_y, x0 + 32 + 64, y0 + 112 + 36 * ii, x0 + 300 - 36, y0 + 112 + 36 * ii + 32)) {
+		array_push(objTooltip.TipText, text)
+	}
+}
+PushTip2("2게일은 더 진한색으로 표시된다.", 1)
+PushTip2("제작자가 아직 256레벨인 관계로 직접 실험하지 못해 구현하지 못하였습니다. 도움 주실 분 연락바랍니다. 카카오톡 오픈채팅 프로필 [스카니아/Pz파전/훰린]", 7)
+PushTip2("이 범위 내에서의 공격만이 유효하게 적용된다. 예를 들어 루시드의 경우, 스킬 제한을 40초로 해두면 40초 이후의 공격은 계산되지 않는다.", 19)
+
 
 for (var i=0; i<SkillNum; i++) {
 	draw_set_color(c_gray0)
@@ -54,16 +63,17 @@ for (var i=0; i<SkillNum; i++) {
 	draw_text(x0 + 300 - 36 + 16, y0 + 112 + 16 + 36 * i + 2, "+")
 	
 	if (mouse_check_button_pressed(mb_left) and point_in_rectangle(mouse_x, mouse_y, x0 + 300 - 36, y0 + 112 + 36 * i, x0 + 300 - 4, y0 + 112 + 36 * i + 32)) {
+		
 		if (i == 0 or i == 19) {
 			if (array_length(SkillPos[i]) == 0) {
 				array_push(SkillPos[i], 0)
-				array_push(SkillDuration[i], 480)
+				array_push(SkillDuration[i], 10)
 			}
 			else {
 				var LastIndex = array_length(SkillPos[i]) - 1;
 				if (SkillPos[i][LastIndex] + SkillDuration[i][LastIndex] < 480 - 1) {
 					array_push(SkillPos[i], SkillPos[i][LastIndex] + SkillDuration[i][LastIndex] + 1)
-					array_push(SkillDuration[i], 480 - (SkillPos[i][LastIndex] + SkillDuration[i][LastIndex]) - 1)
+					array_push(SkillDuration[i], min(1, 480 - (SkillPos[i][LastIndex] + SkillDuration[i][LastIndex]) - 1))
 				}
 			}
 		}

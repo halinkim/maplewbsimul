@@ -916,7 +916,7 @@ function CalculSpec(name, value) {
 	i++;
 }
 
-EditValue("캐릭터 레벨을 입력해주세요.", 275, 200, 300, "CalculDexOff")
+EditValue("캐릭터 레벨을 입력해주세요.", 275, 200, 300, "CalculLv")
 CalculSpec("레벨", CalculLv)
 EditValue("메용 사용 후 DEX를 입력해주세요. (컴뱃 오프, 노도핑)", 90, 1, 99999, "CalculDexOn")
 CalculSpec("메용O DEX", CalculDexOn)
@@ -930,13 +930,13 @@ CalculLvAp = 5 * CalculLv + 18
 CalculRealIncrease = CalculDexOn - CalculDexoff
 CalculPureIncrease = floor(CalculLvAp * 0.15)
 
-CalculPerDex = round((CalculRealIncrease / CalculPureIncrease - 1) * 100) / 100
+CalculPerDex = round((CalculRealIncrease / CalculPureIncrease - 1) * 100)
 //CalculRealPureDex = ceil(CalculPureDex / (1 + CalculPerDex))
 
 PushTip("최종적으로 계산된 순수한 DEX이다. 왼쪽 기본 스펙 카테고리의 순수 DEX에 입력하자.")
-CalculSpec("▶순수 DEX", ceil(CalculPureDex / (1 + CalculPerDex) - CalculLvAp) )
+CalculSpec("▶순수 DEX", ceil(CalculPureDex / (1 + CalculPerDex / 100) - CalculLvAp) )
 PushTip("최종적으로 계산된 DEX%이다. 왼쪽 기본 스펙 카테고리의 DEX%에 입력하자.")
-CalculSpec("▶DEX%", CalculPerDex * 100)
+CalculSpec("▶DEX%", CalculPerDex)
 
 
 
